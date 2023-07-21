@@ -1,0 +1,38 @@
+{
+    "store": {
+        "book": [
+            {
+                "category": "新闻学",
+                "author": "张三",
+                "title": "图书标题1",
+                "price": 8.95
+            },
+            {
+                "category": "金融学",
+                "author": "李四",
+                "title": "图书标题2",
+                "price": 12.00
+            },
+            {
+                "category": "计算机",
+                "author": "王五",
+                "title": "图书标题3",
+                "isbn": "0-553-21311-3",
+                "price": 9.99
+            },
+            {
+                "category": "医学",
+                "author": "赵六",
+                "title": "图书标题4",
+                "price": 22.99
+            }
+        ],
+        "phone": {
+            "color": "red",
+            "price": 1999.00,
+            "author": "孙七"
+        }
+        
+    }
+   
+}

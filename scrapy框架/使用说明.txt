@@ -1,0 +1,60 @@
+1. 创建爬虫的项目:
+        scrapy startproject 项目名称
+            注意: 项目名称不允许使用 数字开头 也不能包含中文
+
+
+2. 创建爬虫文件
+        要在spiders文件夹中去创建爬虫文件
+        cd scrapy_baidu\scrapy_baidu\spiders
+
+        创建爬虫文件
+        scrapy genspider 爬虫文件的名字  要爬取的网页
+
+        ex: scrapy genspider baidu http://www.baidu.com
+
+        一般情况下不需要添加http协议  因为start_urls的值是根据 allowed_domains
+        修改的    所以添加了http的话    那么start_urls就需要我们手动去修改了
+
+
+3. 运行爬虫代码
+                scrapy crawl  爬虫的名字 
+                
+                ex: scrapy crawl baidu
+
+
+
+4.scrapy 项目结构
+项目名字
+        项目名字
+                spiders文件夹 (存储的是爬虫文件)
+                        init.py
+                        自定义的爬虫文件         (核心功能文件)*************
+                init.py 
+                items.py                        (定义数据结构的地方 爬取的数据都包含哪些)
+                middleware      中间件          (代理机制)
+                pipelines       管道            (用来处理下载数据)
+                settings        配置文件        (robots协议  ua定义)
+
+
+5. response的属性和方法
+        response.text   获取的是响应的字符串
+        response.body   获取的是二进制数据
+        response.xpath  直接使用xpath方法来解析response中的内容
+        response.extract()              提取selector对象的data属性值
+        response.extract_first()        提取的是selector列表中的第一个元素
+
+
+6. scrapy工作原理
+        1. 引擎向spider要url
+        2. 引擎将要爬取的url给调度器
+        3. 调度器会将url生成请求对象放入到制定队列中
+        4. 从对立中出队一个请求
+        5. 引擎将请求交给下载器进行处理
+        6. 下载器发送请求获取互联网数据
+        7. 下载器将数据返回给引擎
+        8. 引擎将数据再次给到spider
+        9. spider通过xpath解析该数据，得到数据或者url
+        10. spider将数据或者url给到引擎
+        11. 引擎判断这个数据是url还是需要下载的数据，
+                如果是下载的数据; 则交给管道下载
+                如果是url重复1-10这个操作

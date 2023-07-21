@@ -1,0 +1,26 @@
+常用ADB命令
+
+1.连接模拟器
+    adb connect 127.0.0.1:7555
+
+    雷神端口号: 5555
+    夜神端口号: 6201
+    mumu: 7555
+
+
+2.查看连接设备
+    adb devices
+
+
+3.查看被测app的包名以及入口启动页面
+    要先进入appt的位置 D:\android-sdk\build-tools\29.0.3
+    aapt dum badging apk的路径
+
+    包名:
+    appPackage    package: name='com.tencent.mm'
+
+    筛选质包含package的
+    aapt dum badging D:\Android-APK\weixin.apk | findstr package
+
+    启动页面
+    appActivity  launchable-activity: name='com.tencent.mm.ui.LauncherUI'

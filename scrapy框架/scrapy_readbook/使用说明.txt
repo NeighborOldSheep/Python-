@@ -1,0 +1,8 @@
+1. 创建项目  scrapy startproject 项目名称
+
+2. 跳转到spiders文件夹目录 cd 项目名称  cd项目名称  cd spiders
+
+3.创建爬虫文件
+    scrapy genspider -t crawl 爬虫文件名  网站域名
+
+4. 启动项目  scrapy crawl 爬虫名称

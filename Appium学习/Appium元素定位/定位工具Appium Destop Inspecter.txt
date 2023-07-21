@@ -1,0 +1,4 @@
+Appium Desktop Inspector
+    Appium Server自带的定位工具
+
+    

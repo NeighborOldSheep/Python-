@@ -1,0 +1,15 @@
+""" 
+    UIAutomatoerView/Appium Desktop Inspector/wedito
+
+    1.1UIAutomator View
+        Android SDK自带的定位工具
+        在 Android-SDK/tools/uiautomator.exe
+
+    元素常见的几个属性:
+        text
+        resoureid:
+        class: 元素标签
+        content-desc: 元素功能描述 语音播报
+    
+    注意: 在截屏的时候，必须当前截屏终端没有其他进程在占用,包括appium server
+"""
